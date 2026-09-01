@@ -1,0 +1,869 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!--<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Anonymous+Pro" />-->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3955488173667379"
+     crossorigin="anonymous"></script>
+     
+    <style>
+
+body a {
+    color:#e1ad01;
+}
+
+body a:hover {
+  background-color: grey;
+}
+    .container {
+        
+        background-position: center;
+        /* font-family: Futura, Trebuchet MS, Arial, sans-serif; */
+        font-family: Helvetica, Arial, sans-serif;
+        font-style: normal; 
+        /*background-color: white;*/
+        color: white;
+        font-size:20px;
+       
+    }
+    .right
+    {
+        float: right;
+    }
+    .bulletpoints {
+        text-align: justify;
+    }
+    .boldtext {
+        font-weight: bold;
+    }
+    
+.custon-header{
+    background-image:linear-gradient(to top, rgb(1, 19, 37), rgba(0, 0, 0, 0.4)), url("/photos/6-min.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+    
+.gallery {
+  
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-gap: 15px;
+  
+
+  max-width: 1000px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.gallery img {
+
+  width: 100%;
+  height: 180px; 
+  padding: 2px;
+
+
+  border: 1px solid #ddd;
+ 
+
+  object-fit: cover;
+}
+
+
+@media only screen and (max-width: 600px) {
+  .gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/*.gallery img:hover {*/
+/*  z-index: 9;*/
+/*  transform: scale(1.3);*/
+/*  transition: transform ease 0.5s;*/
+/*}*/
+
+
+.gallery img.full {
+  position: fixed;
+  top: 0; left: 0; z-index: 999;
+  width: 100vw; height: 100%;
+  object-fit: contain;
+  background: rgba(0, 0, 0, 0.7);
+}
+.gallery img.full:hover {
+  z-index: 999;
+  transform: none;
+}
+
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: #ffefc2;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 500px;
+}
+
+#myBtn:hover {
+  background-color: yellow;
+}
+
+.blurred-img {
+  position: relative;
+  background-position:center;
+  background-size: cover;
+}
+
+.blurred-img.loaded > img {
+    animation: none;
+    opacity:1;
+    
+}
+
+.blurred-img > img {
+    opacity: 0;
+    transition: opacity 200ms ease-in-out;
+    animation: pulse 2.5s infinite;
+    background-color: white;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+
+ul.timeline-3 {
+  list-style-type: none;
+  position: relative;
+}
+ul.timeline-3:before {
+  content: " ";
+  background: #d4d9df;
+  display: inline-block;
+  position: absolute;
+  left: 29px;
+  width: 2px;
+  height: 100%;
+  z-index: 400;
+}
+ul.timeline-3 > li {
+  margin: 20px 0;
+  padding-left: 20px;
+}
+ul.timeline-3 > li:before {
+  content: " ";
+  background: white;
+  display: inline-block;
+  position: absolute;
+  border-radius: 50%;
+  border: 3px solid #22c0e8;
+  left: 20px;
+  width: 20px;
+  height: 20px;
+  z-index: 400;
+}
+    </style>
+
+
+    <title>Chinmay's Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <!--<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">-->
+    <link rel="icon" type="image/x-icon" href="/photos/fav/favicon.ico">
+    <link rel="manifest" href="/site.webmanifest">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3955488173667379"
+     crossorigin="anonymous"></script>
+<!-- Matomo -->
+<script>
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(["setCookieDomain", "*.the-cyber-guy.com"]);
+  _paq.push(["setDoNotTrack", true]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//the-cyber-guy.com/matomo/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '1']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img referrerpolicy="no-referrer-when-downgrade" src="//the-cyber-guy.com/matomo/matomo.php?idsite=1&amp;rec=1" style="border:0;" alt="" /></p></noscript>
+<!-- End Matomo Code -->
+
+
+
+  </head>
+
+  <body style="background-color: #011325">
+      <!-- Return to Top -->
+        <button onclick="topFunction()" id="myBtn" title="Go to top"><img src="up-arrow.png" width="35px;"></button>
+      
+
+<div class="container"> 
+        <div class="row justify-content-center">
+
+       
+        <div>
+            <div class="custon-header">
+            &nbsp;&nbsp;
+            <center>
+                <div class="blurred-img" style="background-image: url(/photos/cropped-small.jpg); width:200px; height:auto; border-radius:120px;">
+                    <img style="width:200px; height:auto; border-radius:120px; border: 8px solid;" class="img-fluid" src="photos/cropped.png" loading="lazy" />
+                </div> 
+            </center>   
+            
+            <Center><b style="font-size:27px;"><text style="font-size:39px;">C</text>HINMAY <text style="font-size:39px;">D</text>HARAP</b></Center>
+            <Center><p><a href="mailto:cdharap@outlook.com"><img src="mail.png" style="width:30px;"></a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="http://www.linkedin.com/in/dharapc" target="_blank"><img src="linkedin.png" style="width:30px;"></a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="tel:+1 (646)-535-4162"><img src="call.png" style="width:25px;"></a></p></Center>
+            
+            <!--<hr style="position: relative; top: 2px; border: none; height: 2px; background: black; opacity:1;">-->
+            <!--<p style="text-align: justify;"> <a style="color: auto; text-decoration: none;" href="#">about@popos : ~ $</a> Yup this is another boring personal website and you must be wondering why everything's in 'Green on Black' and a prompt at the start <a style="color: darkgreen; text-decoration: none;" href="">(Coz, I love my terminal)</a>. Yeah, that's right, I use linux, Pop OS to be precise. I crawl with cd. No not since when I was a baby!. </p> <p> I use cd and ls like every directory has a flag xD. When bored, then nano otherwise vim supremacy (honestly speaking, while learning vim I had more sucidal thoughts than a depressed person :) But now I'm happy. </p>-->
+            <div class="text-center">
+                <a href="#certs">Certifications</a> | <a href="#work">Internship experience</a> | <a href="#projects">Projects</a> | <a href="#edu">Education</a> | <a href="#pub">Publications</a> | <a href="#awards">Awards</a> | <a href="#volun">Volunteering</a> | <a href="https://blog.the-cyber-guy.com">Blog</a>
+            </div><br>  
+            
+            
+            <p style="text-align: justify;  font-size:27px;" class="text-center" id="about"> <B><text style="font-size:39px;">W</text>HO AM I? </B><br></p>
+            <!--Certified Ethical Hacker with hands-on experience in incident response, vulnerability assessment, and security automation, trusted with high-level privileges, honored with awards for outstanding work ethic and exceptional contributions in cybersecurity-->
+            
+            
+            <div class="card-dark">
+  <div class="card-header">
+    
+  </div>
+  <div class="card-body text-center">
+    <blockquote class="blockquote mb-0">
+      <p>"A Cyber Ninja: Sharp, Ambitious, Knowledge-Hungry, and Ready to Multitask My Way Through Any Security Challenge!"</p>
+      <footer class="blockquote-footer">My other hobbies include <cite title="Source Title">Standup Paddleboarding on the mighty Hudson, Ice Skating, Archery, Bowling, being a Home Barista, <a href="https://www.flickr.com/photos/196911124@N07" target="_blank">Photography</a> and I am big fan of multi-monitor computer setups!</cite></footer>
+    </blockquote>
+  </div>
+</div><br>
+            </div>
+            
+
+          <div>
+            <hr style="position: relative; top: 2px; border: none; height: 2px; background: #e1ad01; opacity:1;">
+            
+            <p style="text-align: center; font-size:27px;" id="certs"> <B><text style="font-size:39px;">C</text>ERTIFICATIONS</B></p>
+            <ul>
+              <li><a href="https://aspen.eccouncil.org/VerifyBadge?type=certification&a=j4GjfO9Jrl8j7xgX08aa8cnhMRmO5BCxbf4sMkBTsQM=" target="_blank">Certified Ethical Hacker v10</a></li>
+              <li><a href="https://aspen.eccouncil.org/VerifyBadge?type=certification&a=SnBKn98sNMXoXN6YW8vyJX4cAKrGRHvOlfcwVH34zMY=" target="_blank">Certified Ethical Hacker Practical</a></li>
+              <li><a href="https://aspen.eccouncil.org/VerifyBadge?type=certification&a=UQVo3GBnog9JM++f9DI6UBWcGKTG5rNaXiFBlPe9dZ0=" target="_blank">Certified Ethical Hacker Master</a></li>
+              <li><a href="https://aspen.eccouncil.org/VerifyBadge?type=certification&a=HTWZ97INauGjCfJDpsMUQLCLUc0/GukgMyo6DKJae/4=" target="_blank">Computer Hacking Forensics Investigator</a></li>
+            </ul>
+          </div>
+         
+
+
+            <hr style="position: relative; top: 2px; border: none; height: 2px; background: #e1ad01; opacity:1;">
+            <p style="text-align: center; font-size:27px;" id="work"> <B><text style="font-size:39px;">I</text>NTERNSHIP <text style="font-size:28px;">E</text>XPERIENCE</B></p>
+
+
+            <!-- Work Experience 1 Start-->
+
+            <u><b>Security Compliance Intern</b></u><br>
+            <p>Cuddlytails Inc. | Jersey City, New Jersey<text class="right"><b>Apr 2025 - July 2025</b></text></p>
+            
+            <p><mark>What did I do in my tenure?</mark></p>
+            <ul class="bulletpoints">
+              
+              
+              <li>Reduced enterprise security risk by 25% by aligning 60+ internal policies with NIST SP 800-53, SP 800-171, and NIST CSF, strengthening compliance across IAM, MFA, Patch Management, and OT domains</li>
+<li>Accelerated SOC 2 readiness and security review efficiency by 40% by conducting end-to-end technical control gap assessments and streamlining design documentation</li>
+<li>Improved mobile application QA turnaround by 20% by identifying and reporting 25+ security bugs through manual and exploratory testing simulating real-world attacker behaviours</li>
+<li>Increased regulatory alignment across security protocols by conducting vulnerability analysis and mapping 100% of findings to frameworks like NIST and ISO 27001</li>
+
+            </ul>
+            
+      
+<!-- Work Experience 1 End-->
+            <br>
+            <!-- Work Experience 2 Start-->
+
+            <u><b>Security Research Intern</b></u><br>
+            <p>Techincal Consulting & Research Inc. | Weston, Connecticut<text class="right"><b>Sep 2024 - Mar 2025</b></text></p>
+            
+            <p><mark>What did I do in my tenure?</mark></p>
+            <ul class="bulletpoints">
+              
+              <li>Contributed to AI/ML security knowledge base by co-authoring a peer-reviewed paper presented at ASEE-NE 2025, advancing best practices
+for AI-driven privacy, misinformation, and secure digital behavior</li>
+<li>Increased cybersecurity awareness for 100+ small business participants by leading a Holiday Cybersecurity webinar through Virginia SBDC, covering common threat vectors and secure design principles</li>
+<li>Produced 3 technical whitepapers improving organizational tool adoption by analysing Azure WAF, Zscaler, and NIST 800-171 implementations and recommending compliance improvements</li>
+<li>Helped design AI security defenses for LLMs by simulating threats like prompt injection and data exfiltration, applying attacker-centric thinking to support runtime defense strategy development</li>
+                
+            </ul>
+<!-- Work Experience 2 End-->
+<br>
+<!-- Work Experience 3 Start-->
+
+            <u><b>Information Security Specialist</b></u><br>
+            <p>Stevens Inst of Technology | Hoboken, New Jersey<text class="right"><b>Jun 2023 - May 2024</b></text></p>
+            <p> <mark>How I got the job:</mark></p>
+          
+            <ul class="bulletpoints">
+                <li>There was an attack on Stevens Community. One of the student's account was compromised and the attacker sent phishing emails from that account to alot of people at Stevnes</li>
+                <li>I also got two emails and I understood that it was phishing so I wrote a brief report about it and sent it to the CISO and VP of IT Division at stevens. Luckily, because of that report they understood the scale of the attack and it was immediately mitigated</li>
+                <li>Then two weeks later I got a call from CISO at Stevens and offered me this position</li>
+            </ul>
+            <p><mark>What did I do in my tenure?</mark></p>
+            <ul class="bulletpoints">
+                <!-- <li>I was working as a Information Security Specialist Student Worker and was tasked with multiple daily roles, weekly tasks and need based tasks too</li>
+                <li>I used to monitor and investigate atleast 45-50 incidents daily using Micorsoft Defender for Office 365. At the start I was given Security Operator Role in AD, eventually I got the second highest privileges i.e Security Administrator. And I am proud to say that I was the first student worker till now who got these privileges. With these I started to help my manager to perform soft deletes, updating Access Control Lists, etc</li>
+                <li>I was also given the responsibility to handle the Vulnerability Analysis for the Stevens using Qualys. We scheduled weekly scans for all the different departments at stevens and also for on-prem servers. Then we used to communicate by weekly to the network team for patching up the severe vulnerabilities</li>
+                <li>I have used Okta extensively in conjuction with Defender to cross-check event logs and acocunt activity and managed the user access too</li>
+                <li>My manager also involved me in Endpoint Management and compliance for all the Stevens managed devices, I used to check if all the Stevens Managed Devices are compliant with the required policies set by our team or not. For e.g Bitlocker Compliance Policy</li>
+                <li>Along with all this, I have created multiple SOP Documents for different scenarios and IR playbooks as well</li> -->
+              
+                <li>Accelerated incident response by monitoring and investigating 45-50 security incidents daily. I utilized <u>Microsoft Defender</u> for Office 365 and Armis to identify threats and respond swiftly.</li>
+
+                <li>Ensured secure access for nearly 50,000 users by managing user access and authentication processes, leading to improved identity management. This was done through <b>Okta</b>, where I performed log analysis to investigate and resolve authentication-related incidents.</li>
+
+                <li>Enhanced phishing incident response by being the only Student Worker with Security Administrator (second-highest in org) privileges, enabling faster resolution of access control issues. I assisted in performing soft deletes and managing Access Control Lists (ACLs) during phishing campaigns using elevated access permissions.</li>
+
+                <li>Boosted security posture by 35% through optimizing vulnerability management. I led weekly vulnerability scans using <b>Qualys</b> and coordinated with the network team to prioritize and implement patches for critical vulnerabilities across on-prem servers and various campus departments.</li>
+
+                <li>Reduced user account compromises by 60% and improved network security by isolating malicious and compromised devices, which boosted overall security by 65%. I achieved this by contributing to the Protect Stevens Initiative through effective collaboration with security teams.</li>
+
+                <li>Maintained 100% endpoint compliance by implementing and enforcing endpoint security policies, resulting in enhanced device security. I used <b>Microsoft Intune and Endpoint Central</b> to ensure that Stevens-managed devices adhered to security policies such as Bitlocker compliance.</li>
+
+                <li>Streamlined cybersecurity operations and improved response time by authoring Incident Response Playbooks and Standard Operating Procedures (SOPs). I created comprehensive documentation that improved team efficiency during incidents.</li>
+
+                <li>Enhanced security team's ability to stay ahead of emerging threats by conducting research on threat actors and addressing security concerns in alignment with Protect Stevens protocols. I regularly analyzed industry reports and contributed insights to threat hunting efforts.</li>
+
+                <li>Strengthened cybersecurity defenses by participating in adversary emulation and threat hunting exercises, leading to the mitigation of critical risks. I worked closely with the team to identify and emulate potential attack vectors, refining the organization's defense strategies.</li>
+
+            </ul>
+            <p><b><u>Awards & Recognitions 🏆</u></b></p>
+            <ul class="bulletpoints">
+              <li><u><b><a href="https://www.linkedin.com/feed/update/urn:li:activity:7202301258676715521/" target="_blank">Passion for Technology Graduate Award:</a></b></u> Awarded from over 8,000 students across campus for exceptional contribution to Stevens Cybersecurity Team and as one of only 2 students to hold the prestigious Information Security Specialist role</li>
+          </ul>
+            <div class="text-white">
+            <p><b><u>References:</u></b></p>
+            <!--<ol class="bulletpoints">-->
+            <!--    <li><b>Jeremy Livingston</b> (Chief Information Security Officer @ Stevens) - <a href="lor/ciso_lor.pdf" target="_blank">Letter of Recommendation</a> &nbsp;<img src="pdf.png" style="width:30px;"></li>-->
+            <!--    <li><b>Rafat Azard</b> (Cybersecurity Engineer @ Stevens) - <a href="lor/dm_lor.pdf" target="_blank">Letter of Recommendation</a> &nbsp;<img src="pdf.png" style="width:30px;"></li>-->
+            <!--</ol>-->
+            <div class="table-responsive text-white">
+                                <table class="table table-hover table-borderless"> 
+                                    <tr>
+                                        <th class="text-light">#</th>
+                                        <th class="text-light">Name</th>
+                                        <th class="text-light">Position</th>
+                                        <th class="text-light">Recommendation</th>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-light">1</td>
+                                        <td class="text-light">Jeremy Livingston</td>
+                                        <td class="text-light">Chief Information Security Officer</td>
+                                        <td><a href="lor/ciso_lor.pdf" target="_blank">Letter of Recommendation</a>
+                                            &nbsp;<img src="/pdf.png" style="width:30px;"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-light">2</td>
+                                        <td class="text-light">Rafat Azad</td>
+                                        <td class="text-light">Cybersecurity Engineer</td>
+                                        <td><a href="lor/dm_lor.pdf" target="_blank">Letter of Recommendation</a>
+                                            &nbsp;<img src="/pdf.png" style="width:30px;"></td>
+                                    </tr>
+
+                                </table>
+                            </div>
+            </div>
+<!-- Work Experience 3 End-->
+
+<br>
+
+<!-- Work Experience 4 Start-->
+
+            <u><b>Security Architect and Lead Developer</b></u><br>
+            <p>A. P. Shah Institute of Technology | Thane, India<text class="right"><b>Jun 2021 - May 2022</b></text></p>
+          
+            <p><mark>What did I do in my tenure?</mark></p>
+            <ul class="bulletpoints">
+                <!-- <li>I was working as a Information Security Specialist Student Worker and was tasked with multiple daily roles, weekly tasks and need based tasks too</li>
+                <li>I used to monitor and investigate atleast 45-50 incidents daily using Micorsoft Defender for Office 365. At the start I was given Security Operator Role in AD, eventually I got the second highest privileges i.e Security Administrator. And I am proud to say that I was the first student worker till now who got these privileges. With these I started to help my manager to perform soft deletes, updating Access Control Lists, etc</li>
+                <li>I was also given the responsibility to handle the Vulnerability Analysis for the Stevens using Qualys. We scheduled weekly scans for all the different departments at stevens and also for on-prem servers. Then we used to communicate by weekly to the network team for patching up the severe vulnerabilities</li>
+                <li>I have used Okta extensively in conjuction with Defender to cross-check event logs and acocunt activity and managed the user access too</li>
+                <li>My manager also involved me in Endpoint Management and compliance for all the Stevens managed devices, I used to check if all the Stevens Managed Devices are compliant with the required policies set by our team or not. For e.g Bitlocker Compliance Policy</li>
+                <li>Along with all this, I have created multiple SOP Documents for different scenarios and IR playbooks as well</li> -->
+              
+               <li>Engineered a secure, CMS-based academic portal using PHP and MySQL, improving accessibility by 60% for 200+ users while ensuring robust protection of academic data and enabling future scalability through modular backend architecture.</li>
+
+<li>Architected and implemented role-based access controls (RBAC) across three granular permission tiers, reducing access misconfigurations by 70% and enforcing least privilege principles at the application level to mitigate lateral movement risks.</li>
+
+<li>Hardened the web application against common injection attacks by integrating input validation, output sanitization, and parameterized SQL queries, achieving a 90% reduction in the injection attack surface in alignment with OWASP secure coding practices.</li>
+
+<li>Developed a custom authentication framework leveraging PHP-native password hashing algorithms and minimized direct DB privileges, reducing the likelihood of credential theft and brute-force attacks by 50% and supporting secure user session management.</li>
+
+<li>Refactored the codebase into modular components and optimized SQL queries, reducing backend maintenance efforts by 50% and enabling faster feature deployment and easier security auditing for long-term system maintainability.</li>
+
+<li>Led the migration to a CMS-backed content update model, streamlining faculty workflows and reducing manual update errors, while incorporating secure SDLC principles and CI-ready deployment processes to ensure safe and consistent releases.</li>
+
+            </ul>
+            
+           
+<!-- Work Experience 4 End-->
+
+
+
+            
+            <hr style="position: relative; top: 2px; border: none; height: 2px; background: #e1ad01; opacity:1;">
+            <p style="text-align: center; font-size:27px;" id="projects"> <B><text style="font-size:39px;">P</text>ROJECTS </B></p>
+        
+        
+           <div class="container">
+           <div class="row d-flex justify-content-center text-center">
+                
+
+            <div class="card" style="width:18rem; padding-right:0px; padding-left:0px; margin-right: 10px;margin-left: 10px; margin-bottom: 10px;margin-top: 10px;">
+              <div class="blurred-img" style="background-image: url(/photos/project3-small.jpg); height:290px;"><img src="/photos/project3.jpg" class="card-img-top" loading="lazy" /></div>
+              <div class="card-body">
+                 <blockquote class="blockquote mb-0">
+                 <h4 class="card-title">Project RapidLock: Real-Time Physical Threat Containment</h4><br>
+                 <p>Oct 2023 – May 2024</p>
+                 <p class="blockquote-footer">Tools used: <cite title="Source Title">MS Power Automate</cite></p>
+                </blockquote><br>
+            
+                <!-- Button trigger modal -->
+            <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exampleModal3">
+              Learn more
+            </button>
+            
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel"><b>Project Title:</b> Project RapidLock: Real-Time Physical Threat Containment</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body" style="text-align: justify;">
+                                <!-- <ul>
+                                    <li>After the previous projects, CISO at Stevens requested me to take the ownership of another automation project which was started way back but was forgotten</li>
+            <li>Stevens PD wanted a working stable solution for emergency doors lockdown. At stevens all the doors are controlled by a Transact System which is installed in a Server on Campus. When the Police had to initiate a full campus lockdown, they had to connect to the VPN, log into another server which had the door monitor client installed. And then finally initiate the lockdown mode for all the doors on campus</li>
+            <li>So I used Microsoft Power Automate to make an automated cloud flow which will mimic all the process of logging into the client and initiating the door lockdown. I suggested to install this flow  directly on the main server because of the VPN. And only one person will have the access to run the flow which is also given to the person's Stevens Account which already is secured with 2FA</li>
+            <li>Police loved this and asked us to test it with a physical button, So we went ahead bought a physical button which was compatible with Power Automate</li>
+                                    
+                                </ul> -->
+                  
+                                <u>Overview:</u>
+                                <p>This project aimed to automate the emergency doors lockdown process at Stevens using Microsoft Power Automate, improving security response times in critical situations.</p>
+                                
+                                <u>Context:</u>
+                                <p>Stevens Police Department needed a stable solution for initiating a full campus lockdown. The existing process required connecting to a VPN, logging into a server, and manually initiating lockdown mode for all campus doors controlled by a Transact System. This multi-step process was time-consuming and inefficient in emergency situations.</p>
+                                
+                                <u>Challenge:</u>
+                                <p>The manual steps involved in initiating a campus-wide lockdown delayed response times and required multiple actions that could complicate the process during an emergency.</p>
+                                
+                                <u>Solution:</u>
+                                <p>Using Microsoft Power Automate, I developed a cloud-based flow that mimicked the entire process of logging into the client and initiating the lockdown mode. To enhance security, we installed the flow directly on the main server and restricted access to a single individual’s Stevens account, protected by 2FA. We also integrated a physical button compatible with Power Automate for faster activation of the lockdown.</p>
+                                
+                                <b><I>Implementation Details:</I></b><br>
+                                
+                                <u>Input:</u><br>
+                                <ul> <li>Power Automate Flow: The flow automates logging into the Transact System client and initiating the lockdown.</li> <li>Physical Button: A compatible button that triggers the flow when pressed.</li> </ul>
+                                
+                                <u>Flow Breakdown:</u>
+                                <ul> <li>Cloud Flow Automation: The flow logs into the Transact System, navigates to the door monitoring client, and triggers the lockdown sequence.</li> <li>Security Enhancements: Access was restricted to the Stevens Police account, which was protected by two-factor authentication (2FA).</li> </ul>
+                                
+                                <u>Output:</u>
+                                <p>The automation drastically reduced the time to initiate a lockdown and simplified the process for Stevens Police.</p>
+                                
+                                <u>Impact:</u>
+                                <p>The Police department appreciated the solution, and after successful testing, the physical button was implemented as a quick and secure way to trigger a campus-wide lockdown.</p>
+                              </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- End of the Modal -->
+              </div>
+            </div>
+
+            <div class="card" style="width:18rem; padding-right:0px; padding-left:0px; margin-right: 10px;margin-left: 10px; margin-bottom: 10px;margin-top: 10px;">
+  <div class="blurred-img" style="background-image: url(/photos/project1-small.jpg); height:290px;"><img src="/photos/project1.jpg" class="card-img-top" loading="lazy" /></div>
+  <div class="card-body">
+    
+     <blockquote class="blockquote mb-0">
+     <h4 class="card-title">NetSentry: Intelligent Subnet Discrepancy Detector</h4><br>
+     <p class="footer">Sep 2023 – Oct 2024</p>
+     <p class="blockquote-footer">Tools used: <cite title="Source Title">Python, Excel</cite></p>
+    </blockquote><br>
+
+    <!-- Button trigger modal -->
+<button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Learn more
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel"><b>Project Title:</b> NetSentry: Intelligent Subnet Discrepancy Detector</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" style="text-align: justify;">
+                    <!-- <ul>
+                        <li>This was the very first automation project which I did in my tenure at Stevens. We were adding a new tool to our arsenal which was an active network mapper. As a part of configuring that tool, our network team added all the original network boundaries we had and Security team was given a task to cross check if all the subnets/boundaries were properly configured or not so that we won't miss anything</li>
+<li>We were given two very long Excel sheets which had all the original data and the exported data from the Tool that we had to cross-check manually one by one which was extremely time consuming and exhausting</li>
+<li>So I took help of python to write a script for comparing two excel sheets to check if the configurations was the same or not</li>
+                        
+                    </ul> -->
+
+<u>Overview:</u>
+
+<p>The objective of this project was to automate the verification of network subnet boundaries during the configuration of an active network mapping tool. This script compares original network configurations against exported data from the tool, streamlining the process and reducing manual effort.</p>
+<u>Context:</u>
+<p>As part of adding a new network mapping tool to our infrastructure, the network team defined the network boundaries, which the security team needed to verify. The task involved comparing two large Excel sheets: one with the original configurations and another with the tool’s exported data. Manual comparison was inefficient, so I developed a Python script to automate this process.</p>
+<u>Challenge:</u>
+<p>Manually cross-checking hundreds of rows of network subnets in Excel was time-consuming and prone to error, making the process cumbersome.</p>
+
+<u>Solution:</u>
+<p>The solution involved creating a Python script that automatically compares the network addresses between the two sheets and identifies any mismatches. Below is a detailed breakdown of the approach:</p>   
+
+<b><I>Implementation Details:</I></b><br>
+
+<u>Input:</u><br>
+        <ul><li>2 Excel File: <br>One for the original subnet list and another for the exported data from the tool.</li>
+        <li>Columns:</li>
+            - List 1: Original subnet configurations.<br>
+            - List 2: Exported configurations from the network tool.
+          </ul>
+<u>Script Breakdown:</u>
+  <ul>
+    <li>IP/Subnet Extraction: The script extracts the IP address and subnet from each entry using a regular expression:</li>
+    <!-- <div style="background-color:#011325; border-radius: 10px;">
+      <code style="color: #e1ad01;">def extract_ip_subnet(entry):<br>
+        &emsp;&emsp;&emsp;pattern = r'(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\s+\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})'<br>
+        &emsp;&emsp;&emsp;match = re.search(pattern, entry)<br>
+        &emsp;&emsp;&emsp;return match.group(1) if match else None
+  </code></div> --><img src="photos/code1.png" style="border-radius: 8px;" class="img-fluid" alt="Responsive image">
+  <li>Network Calculation: Converts the IP and subnet into a network address:</li><img src="photos/code2.png" style="border-radius: 8px;" class="img-fluid" alt="Responsive image">
+  <li>Comparison Logic: Compares the extracted network addresses from List 2 with those from List 1:</li><img src="photos/code3.png" style="border-radius: 8px;" class="img-fluid" alt="Responsive image">
+  </ul>
+<u>Output:</u>
+<p>The script produces a status report that adds a new column to the Excel sheet, indicating whether each network address is correctly configured or not.</p>
+<u>Sample Example:</u>
+<p>Here's a small example of how the script checks for mismatches</p>
+<img src="photos/code4.png" style="border-radius: 8px;" class="img-fluid" alt="Responsive image">
+</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- End of the Modal -->
+
+  </div>
+</div>
+
+<div class="card" style="width:18rem; padding-right:0px; padding-left:0px; margin-right: 10px;margin-left: 10px; margin-bottom: 10px;margin-top: 10px;">
+  <div class="blurred-img" style="background-image: url(/photos/project2-small.jpg); height:290px;"><img src="/photos/project2.jpg" class="card-img-top" loading="lazy" /></div>
+  <div class="card-body">
+    <blockquote class="blockquote mb-0">
+     <h4 class="card-title">VulnFlow: Automated Vulnerability Data Cleanup Engine</h4><br>
+     <p>Jul 2023 – Sep 2023</p>
+     <p class="blockquote-footer">Tools used: <cite title="Source Title"> Qualys, Python, Bash, Excel</cite></p>
+    </blockquote><br>
+
+    <!-- Button trigger modal -->
+<button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+  Learn more
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel"><b>Project Title:</b> VulnRefine: Automated Vulnerability Data Cleanup Engine</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" style="text-align: justify;">
+                    <!-- <ul>
+                        <li>When I was tasked with VAPT, I was told that we use a Data Visualization Tool for creating a VAPT Dashboard, that tool was Grafana. But the raw output from Qualys wasn't compitible with Grafana's validation requirements</li>
+<li>So we had to clean the raw output manually to make some changes and make the document compatible with Grafana so that it will accept the document as a source and visualize the data</li>
+<li>That manual task was an hour long atlease, because we had multiple scan result files to work with</li>
+<li>From taking an inspiration from the first project I again tried to use python to automate the excel cleaning tasks</li>
+<li>And after almost three months of rigourous testing we finally implemented the automation solution in weekly use</li>
+<li>It saved almost two hours weekly to complete that task, and the script now runs and completes the process under few seconds</li>
+                        
+                    </ul> -->
+                    <u>Overview:</u>
+                    <p>The objective of this project was to automate the cleaning of raw vulnerability data from Qualys, making it compatible with Grafana for data visualization. The automation reduced manual effort and made the process more efficient.</p>
+                    
+                    <u>Context:</u>
+                    <p>During a Vulnerability Assessment and Penetration Testing (VAPT) task, we were using Grafana to visualize vulnerability data. However, the raw output from Qualys was incompatible with Grafana’s validation requirements, requiring manual cleaning of the data to make it suitable for visualization.</p>
+                    
+                    <u>Challenge:</u>
+                    <p>Manually cleaning the raw data from Qualys for multiple scan result files was a tedious process, taking at least an hour each time.</p>
+                    
+                    <u>Solution:</u>
+                    <p>To streamline the process, I developed a Python script to automate the cleaning of Excel files. The script removed unnecessary columns, reformatted the data to meet Grafana’s validation requirements. After rigorous testing over three months, we implemented the automation for weekly use, saving approximately two hours per week as the script now completes the process in a matter of seconds.</p>
+                    
+                    <b><I>Implementation Details:</I></b><br>
+                    
+                    <u>Input:</u><br>
+                    <ul> <li>Raw output Excel files from Qualys containing vulnerability data.</li> </ul>
+                   
+                    <u>Key Automations:</u>
+                    <ul>
+                      <li>Deleting unnecessary rows: The script automatically skips the first few rows in each file that contain irrelevant information not required for Grafana ingestion.</li>
+                      <img src="photos/code5.png" style="border-radius: 8px;" class="img-fluid" alt="Responsive image">
+                      <li>Renaming columns: The script changes column headers (e.g., renaming ‘Asset Tags’ to ‘Asset Group’) to match Grafana's requirements.</li>
+                      <img src="photos/code6.png" style="border-radius: 8px;" class="img-fluid" alt="Responsive image">
+                      <li>Adjusting risk scores: The script updates the risk score in certain cases, such as when an asset is classified as "Internet Facing," ensuring accurate data representation.</li>
+                      <img src="photos/code7.png" style="border-radius: 8px;" class="img-fluid" alt="Responsive image">
+                      <li>Removing unnecessary tags: The script filters and removes tags not relevant to the analysis, leaving only essential tags for Grafana's dashboard.</li>
+                      <img src="photos/code8.png" style="border-radius: 8px;" class="img-fluid" alt="Responsive image">
+                      <li>VLOOKUP implementation: A VLOOKUP function is included to merge additional data (such as server types) from a separate lookup file into the main file.</li>
+                      <img src="photos/code9.png" style="border-radius: 8px;" class="img-fluid" alt="Responsive image">
+                    </ul>
+
+
+                    <u>Output:</u>
+                    <p>The script outputs a cleaned Excel file that is compatible with Grafana for direct use in dashboards.</p>
+                    
+                    <u>Impact:</u>
+                    <p>The automated solution saved up to two hours of manual work per week, allowing the security team to focus on higher-value tasks. The script now processes multiple scan result files in a matter of seconds.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- End of the Modal -->
+  </div>
+</div>
+
+
+
+
+
+
+</div> 
+</div>
+
+ <hr style="position: relative; top: 2px; border: none; height: 2px; background: #e1ad01; opacity:1;">
+            
+            <p style="text-align: center; font-size:27px;" id="edu"> <B><text style="font-size:39px;">E</text>DUCATION</B></p><br>
+            <div class="table-responsive">
+            <table class="table">
+              <tr>
+                <th class="text-light">Degree</th>
+                <th class="text-light">Major</th>
+                <th class="text-light">University</th>
+              </tr>
+              <tr>
+                <td  class="text-light"><a href="https://www.parchment.com/u/award/ed05f724dbf754123589aa55e4481b0d" target="_blank">Master of Science (MS)</a></td>
+                <td  class="text-light">Cybersecurity</td>
+                <td  class="text-light">Stevens Institute of Technology, NJ</td>
+              </tr>
+              <tr>
+                <td  class="text-light">Bachelor of Engineering (BE)</td>
+                <td  class="text-light">Information Technology</td>
+                <td  class="text-light">University of Mumbai, India</td>
+              </tr>
+            </table>
+            </div>
+
+
+           <hr style="position: relative; top: 2px; border: none; height: 2px; background: #e1ad01; opacity:1;">
+
+            <p style="text-align: center; font-size:27px;" id="pub"> <B><text style="font-size:39px;">P</text>UBLICATIONS</B></p><br>
+            <ul>
+            
+              <li>
+                Piliouras, T., & Crasto, S., & Dharap, C., & Yu, P. L., & Gupta, N. (2025, March), "Teaching Students Essential Survival Skills in the Age of Generative Artificial Intelligence Critical Thinking, Digital Literacy, and Cybersecurity Awareness" Paper presented at 2025 Northeast Section Conference, University of Bridgeport, Bridgeport, CT. 10.18260/1-2-1115.1153-54984 &nbsp;<a href="https://peer.asee.org/54984" target="_blank"><img src="/url.png" style="width:30px;"></a></li>
+            </ul>
+
+
+           <hr style="position: relative; top: 2px; border: none; height: 2px; background: #e1ad01; opacity:1;">
+            
+            <p style="text-align: center; font-size:27px;" id="awards"> <B><text style="font-size:39px;">A</text>WARDS </B><br></p>
+            
+            <ul>
+               <li><b>Passion for Technology Graduate Award:</b> Awarded from over 8,000 students across campus for exceptional contribution to Stevens Cybersecurity Team and as one of only 2 students to hold the prestigious <u>Information Security Specialist role</u></li>
+            </ul>
+             <div class="gallery">
+            <div class="blurred-img" style="background-image: url(photos/Award-small.jpg);"><img src="photos/Award.jpg" title="Graduate Award Cermony" loading="lazy" /></div>
+            <div class="blurred-img" style="background-image: url(photos/Team_1-small.jpg);"><img src="photos/Team_1.jpg" title="Stevens CyberSecurity Team" loading="lazy" /></div>
+    
+    
+  </div><br>
+  
+  <ul>
+               <li><b>Leading by Example Award: </b>Honoured for exemplary service and commitment as a returning peer mentor for 2 consecutive semesters by guiding students through their academic & social integration, demonstrating a strong example for fellow mentors</li>
+            </ul>
+             <div class="gallery">
+              <div class="blurred-img" style="background-image: url(photos/peer_leader_award201-min-small.jpg);"><img src="photos/peer_leader_award201-min.jpg" title="Award and Certificate" loading="lazy" /></div>
+              <div class="blurred-img" style="background-image: url(photos/peer_leader_award202-min-small.jpg);"><img src="photos/peer_leader_award202-min.jpg" title="With Graduate Student Life Team" loading="lazy" /></div>
+    
+    
+  </div><br>
+
+ <ul>
+               <li><b>Ultimate Team Player Award: </b>Recognized as being one of 25 mentors from nearly 2,600 students, for mentoring incoming international masters students, to help them transition into Graduate Life at Stevens</li>
+            </ul>
+             <div class="gallery">
+              <div class="blurred-img" style="background-image: url(photos/peer_leader_award1-min-small.jpg);"><img src="photos/peer_leader_award1-min.jpg" title="With Graduate Student Life Team" loading="lazy" /></div>
+              <div class="blurred-img" style="background-image: url(photos/peer_leader_award2-min-small.jpg);"><img src="photos/peer_leader_award2-min.jpg" title="Solo Photo" loading="lazy"/></div>
+    
+    
+  </div> 
+
+<div id="volun">
+  <hr style="position: relative; top: 2px; border: none; height: 2px; background: #e1ad01; opacity:1;">   
+  <p style="text-align: center; font-size:27px;" id="awards"> <B><text style="font-size:39px;">V</text>OLUNTEER EXPERIENCE </B></p>
+  
+  <div class="container my-5">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <h4 style="margin-left: 1.2rem;">Hoboken Cove Community BoatHouse</h4>
+        <ul class="timeline-3">
+          <li>
+            <a href="#!">Volunteer</a>
+            <a href="#!" class="float-end">Since Jun, 2024</a>
+            <p class="mt-2">HCCB is an all-volunteer based non-profit 501(c)(3) organization. It is New Jersey's Largest Free Paddling Program to provide free water sports (kayaking, Standup Paddleboarding) and access to local waterways for all to enjoy. </p>
+          </li>
+        
+        </ul>
+      </div>
+    </div>
+    <div class="row"></div>
+      <div class="col-md-6 offset-md-3">
+        <h4 style="margin-left: 1.2rem;">Information Technology Student Association, APSIT Thane</h4>
+        <ul class="timeline-3">
+          <li>
+            <a href="#!">President</a>
+            <a href="#!" class="float-end">May 2022</a>
+            
+          </li>
+          <li>
+            <a href="#!">Secretary</a>
+            <a href="#!" class="float-end">Sep 2021</a>
+            
+          </li>
+          <li>
+            <a href="#!">Volunteer</a>
+            <a href="#!" class="float-end">Jul 2020</a>
+            <p class="mt-2">IT Students Association ( ITSA ) is the Student Body of the IT Department @ A. P. Shah Institute of Technology, works for the development of the department as well as the students by giving them opportunity to come forward and nurture themselves while working with ITSA.</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+
+
+</div>
+<hr style="position: relative; top: 2px; border: none; height: 2px; background: #e1ad01; opacity:1;">
+<div class="footer text-center">
+  <text style="color: white; font-size:medium; padding-bottom: 20px;">Designed and Developed from scratch by me 😃| &copy; 2025</text>
+  <br>
+            <p style="font-size:15px; text-align: justify;"><b>Note</b> - This website serves as an extended version of my resume. For more detailed information about my background, I encourage you to explore it thoroughly. The content is carefully written in clear, straightforward language. This website also monitors user activity to protect against spam, abuse, any malicious activity and unauthorized access. This involves logging basic technical information. All analytics are processed locally and never sold or shared externally. For more details, please read the <a href="privacy_policy.html">Privacy Policy</a></p>
+            <div id="matomo-opt-out"></div>
+<script src="https://the-cyber-guy.com/matomo/index.php?module=CoreAdminHome&action=optOutJS&divId=matomo-opt-out&language=auto&backgroundColor=011325&fontColor=ffffff&fontSize=12px&fontFamily=Arial&showIntro=1"></script>
+            
+</div>
+        </div>
+            
+            
+            
+    </div>
+</div>
+
+    <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>-->
+    <script>
+        window.addEventListener("load", () => {
+  for (let i of document.querySelectorAll(".gallery img")) {
+    i.onclick = () => i.classList.toggle("full");
+  }
+});
+
+// Get the button
+let mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+
+const myModal = document.getElementById('myModal')
+const myInput = document.getElementById('myInput')
+
+myModal.addEventListener('shown.bs.modal', () => {
+  myInput.focus()
+})
+
+
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    
+    <script>
+        
+const blurDivs = document.querySelectorAll(".blurred-img")
+blurDivs.forEach(div => {
+    const img = div.querySelector("img")
+    
+    function loaded() {
+        div.classList.add("loaded")
+    }
+    
+    if(img.complete) {
+        loaded()
+    } else {
+        img.addEventListener("load", loaded)
+    }
+})
+
+    </script>
+    
+  </body>
+</html>
