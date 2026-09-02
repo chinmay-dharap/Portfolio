@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Blog post by Chinmay Dharap.">
+    <title>Post | Chinmay Dharap</title>
+    <link rel="icon" href="../photos/fav/favicon.ico">
+    <link rel="stylesheet" href="blog.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="back-link" href="index.html">← All posts</a>
+      <p class="eyebrow">Bits & Beliefs</p>
+    </header>
+    <main>
+      <article class="article" id="article"></article>
+    </main>
+    <footer class="site-footer"><p>© <span id="year"></span> Chinmay Dharap</p></footer>
+    <script src="posts.js"></script>
+    <script>
+      const params = new URLSearchParams(location.search);
+      const post = window.BLOG_POSTS.find(item => item.slug === params.get('post'));
+      const article = document.getElementById('article');
+      const prettyDate = date => new Intl.DateTimeFormat('en', { dateStyle: 'long' }).format(new Date(`${date}T00:00:00`));
+      if (!post) {
+        document.title = 'Post not found | Chinmay Dharap';
+        article.innerHTML = '<div class="empty-state"><h1>Post not found</h1><p>The post may have moved or the link is incorrect. <a href="index.html">Browse all posts</a>.</p></div>';
+      } else {
+        document.title = `${post.title} | Chinmay Dharap`;
+        article.innerHTML = `
+          <header class="article-header">
+            <time class="post-date" datetime="${post.date}">${prettyDate(post.date)}</time>
+            <h1>${post.title}</h1>
+            <div class="tag-list">${post.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}</div>
+          </header>
+          <div class="article-body">${post.content}</div>`;
+      }
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
